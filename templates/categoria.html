@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='es'>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{categoria}}</title>
+    </head>
+    <body>
+        <h2>{{categoria}}<h2>
+        <ul>
+            {% for elem in libros %}
+                {% if categoria in elem.categories %}
+                    {% if elem.isbn %}
+                        <li><a href="/libro/{{elem.isbn}}">{{elem.title}}</a></li>
+                    {% else %}
+                        <li><a href="/categoria/{{categoria}}">{{elem.title}} (No tiene ISBN)</a></li>
+                    {% endif %}
+                    <br>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <a href='/'>Inicio</a>
+    </body>
+</html>
