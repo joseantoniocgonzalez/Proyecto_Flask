@@ -4,19 +4,26 @@
 <div class="posts">
     <h1 class="content-subhead">Librería</h1>
 
+
+
+
+
 	<!-- Main -->
 	<div id="main">
 
+
+
+
 		<!-- One -->
 			<section id="one">
-				<a href="/">⟵ Volver atrás</a>
+				<a href="/">⟵ Go back</a>
 				<header class="major">
 					<h1>{{categoria}}</h1>
 					<ul>
             			{% for category in libros %}
                 			{% if categoria in category.categories %}
                     			{% if category.isbn %}
-                        <li><a href="/libro/{{category.isbn}}">{{category.title}}</a></li>
+                        <li><a href="/Libro/{{category.isbn}}">{{category.title}}</a></li>
                 				{% endif %}
 							{% endif %}
             			{% endfor %}
