@@ -1,23 +1,29 @@
-<!DOCTYPE html>
-<html lang="es">
 
+{% extends "base.html" %}
+{% block title %}Librería{% endblock %}
+{% block content %}
+<div class="posts">
+    <h1 class="content-subhead">Librería</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Incio</title>
-</head>
+		<!-- Main -->
+			<div id="main">
 
-<body>
-    <h1> Mi nombre es {{nombre}}</h1>
-    <h2>Biblioteca</h2>
-    <ul>
-    {% for elem in libros -%}
-        {% if elem.isbn -%}
-            <li><a href="/libro/{{elem.isbn}}">{{elem.title}}</a></li>
-        {% else -%}
-            <li><a href='/'>No tiene ISBN</a></li>
-        {% endif -%}
-    {% endfor -%}
-    </ul>
-</body>
-</html>
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Jose Antonio Canalo Gonzalez</h1>
+       						<h2>Biblioteca</h2>
+						</header>
+						<ul>
+							{% for element in libros %}
+								{% if element.isbn %}
+									<li><a href="/libro/{{element.isbn}}">{{element.title}}</a></li>
+								{% else %}
+									<li><a href="/">{{element.title}} (No tiene ISBN)</a></li>
+								{% endif %}
+								<br>
+							{% endfor %}
+						</ul>
+					</section>
+			</div>
+{% endblock %}
