@@ -25,4 +25,5 @@ def categoria(categoria):
             return render_template("categoria.html", libros=datos, categoria=categoria)
     abort(404)
 
-app.run('0.0.0.0' ,debug=False)
+port=os.environ["PORT"]
+app.run('0.0.0.0', int(port), debug=False)
